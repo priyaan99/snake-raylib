@@ -1,8 +1,9 @@
 #include "raylib.h"
 #include <stdio.h> // sprintf
 
-#define SCREEN_WIDTH 1200
-#define SCREEN_HEIGHT 650
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 450
+#define FONT_SIZE 50
 #define BOX_SIZE 25
 #define MAX_LEN 100
 
@@ -206,10 +207,10 @@ void draw()
             draw_game();
             break;
         case OUT:
-            DrawText("Out", SCREEN_WIDTH/2-50, SCREEN_HEIGHT/2-50, 54, RED);
+            DrawText("Out", GetScreenWidth()/2-MeasureText("Out", FONT_SIZE)/2, GetScreenHeight()/2-120, FONT_SIZE, RED);
             char text[100];
             sprintf(text, "Score :: %d", score);
-            DrawText(text , SCREEN_WIDTH/2-50, SCREEN_HEIGHT/2+20, 54, RED);
+            DrawText(text ,GetScreenWidth()/2-MeasureText(text, FONT_SIZE)/2, GetScreenHeight()/2, FONT_SIZE, RED);
             break;
         case PLAY: 
             draw_game();
